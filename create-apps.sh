@@ -9,4 +9,3 @@ node unitejs/cli/bin/unite configure --packageName=vue-typescript-amd --title="V
 
 node unitejs/cli/bin/unite configure --packageName=vue-typescript-systemjs --title="Vue TypeScript SystemJS" --profile=VueTypeScript --moduleType=SystemJS --bundler=SystemJSBuilder --outputDirectory=./apps/vue-typescript-systemjs
 # node unitejs/cli/bin/unite package --packageName=moment --outputDirectory=./apps/vue-typescript-systemjs
-
