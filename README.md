@@ -1,8 +1,8 @@
-# UniteJS Test Angular Packages
+# UniteJS Test Vue Packages
 
 ## UniteJS Operations
 
-* unite configure --profile=AngularJavaScript/AngularTypeScript
+* unite configure --profile=VueJavaScript/VueTypeScript
 * unite package --packageName=moment
 
 ## Build Operations
