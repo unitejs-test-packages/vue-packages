@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+  - "8"
+before_install:
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/framework.git unitejs/framework
+  - cd unitejs/framework
+  - npm link
+  - cd ../../
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli-core.git unitejs/cli-core
+  - cd unitejs/cli-core
+  - npm link unitejs-framework
+  - npm link
+  - cd ../../
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/packages.git unitejs/packages
+  - cd unitejs/packages
+  - npm link
+  - cd ../../
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/engine.git unitejs/engine
+  - cd unitejs/engine
+  - npm link unitejs-framework unitejs-packages
+  - npm link
+  - cd ../../
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli.git unitejs/cli
+  - cd unitejs/cli
+  - npm link unitejs-framework unitejs-cli-core unitejs-engine
+  - cd ../../
+  - npm install -g gulp
+script: 
+  - chmod +x ./build.sh
+  - chmod +x ./create-apps.sh
+  - ./build.sh || travis_terminate 1
+
