@@ -42,7 +42,7 @@ for f in */; do
         echo "$f - gulp unit"
         gulp unit >> $BUILD_OUTPUT 2>&1
         echo "$f - gulp e2e-install"
-        gulp e2e-install --drivers=chrome >> $BUILD_OUTPUT 2>&1
+        gulp e2e-install --drivers=chrome@2.33 >> $BUILD_OUTPUT 2>&1
         echo "$f - gulp e2e"
         gulp e2e >> $BUILD_OUTPUT 2>&1
         echo "$f - gulp build --buildConfiguration=prod"
