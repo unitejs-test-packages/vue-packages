@@ -2,26 +2,26 @@ language: node_js
 node_js:
   - "8"
 before_install:
-  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/framework.git unitejs/framework
-  - cd unitejs/framework
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/framework.git unitejs/unitejs-framework
+  - cd unitejs/unitejs-framework
   - npm link
   - cd ../../
-  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli-core.git unitejs/cli-core
-  - cd unitejs/cli-core
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli-core.git unitejs/unitejs-cli-core
+  - cd unitejs/unitejs-cli-core
   - npm link unitejs-framework
   - npm link
   - cd ../../
-  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/packages.git unitejs/packages
-  - cd unitejs/packages
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/packages.git unitejs/unitejs-packages
+  - cd unitejs/unitejs-packages
   - npm link
   - cd ../../
-  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/engine.git unitejs/engine
-  - cd unitejs/engine
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/engine.git unitejs/unitejs-engine
+  - cd unitejs/unitejs-engine
   - npm link unitejs-framework unitejs-packages
   - npm link
   - cd ../../
-  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli.git unitejs/cli
-  - cd unitejs/cli
+  - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/cli.git unitejs/unitejs-cli
+  - cd unitejs/unitejs-cli
   - npm link unitejs-framework unitejs-cli-core unitejs-engine
   - cd ../../
   - npm install -g gulp
