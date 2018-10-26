@@ -7,8 +7,9 @@ addons:
     packages:
     - google-chrome-stable
 node_js:
-  - 9
+  - 10
 before_install:
+  - npm install -g gulp
   - git clone --branch=$TRAVIS_BRANCH https://github.com/unitejs/framework.git unitejs/unitejs-framework
   - cd unitejs/unitejs-framework
   - npm link
@@ -31,7 +32,6 @@ before_install:
   - cd unitejs/unitejs-cli
   - npm link unitejs-framework unitejs-cli-core unitejs-engine
   - cd ../../
-  - npm install -g gulp
 script: 
   - chmod +x ./build.sh
   - chmod +x ./create-apps.sh
