@@ -9,8 +9,8 @@ export BUILD_OUTPUT_TMP=$WORKDIR/build.tmp
 touch $BUILD_OUTPUT
 
 dump_output() {
-   echo Tailing the last 500 lines of output:
-   tail -500 $BUILD_OUTPUT
+   echo Tailing the last 300 lines of output:
+   tail -300 $BUILD_OUTPUT
 }
 error_handler() {
   echo ERROR: An error was encountered with the build.
